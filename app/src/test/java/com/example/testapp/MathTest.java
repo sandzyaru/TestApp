@@ -18,12 +18,12 @@ public class MathTest {
     }
     @Test
     public void doubleAdd(){
-        assertEquals("4",math.add("2","2.0"));
+        assertEquals("Enter an Integer",math.add("2","2.0"));
     }
 
     @Test
     public void letterWithSpaceOrWithoutAdd(){
-        assertEquals("Letters cannot be entered",math.add("2","a 1"));
+        assertEquals("Letters cannot be entered",math.add("2","a"));
     }
 
     @Test
@@ -36,7 +36,7 @@ public class MathTest {
     }
     @Test
     public void simpleDivide(){
-        assertEquals("6",math.divide("6","2"));
+        assertEquals("3",math.divide("6","2"));
     }
 
     @Test

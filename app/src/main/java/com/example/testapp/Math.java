@@ -1,7 +1,6 @@
 package com.example.testapp;
 
 import java.util.regex.Pattern;
-
 public class Math {
     private Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
     String result = "";
@@ -10,17 +9,21 @@ public class Math {
         if (a.isEmpty() || b.isEmpty()) {
             return "Empty";
         }
-        if (isNumeric(a) || isNumeric(b)) {
-            int num1 = Integer.parseInt(a);
-            int num2 = Integer.parseInt(b);
+        if (isNumeric(a) && isNumeric(b)) {
 
-            result = String.valueOf(num1 + num2);
-        } else {
-            result = "Letters and spaces cannot be entered ";
-            System.out.println("Letters and spaces cannot be entered.");
+            if (a.contains(".") || b.contains(".")) {
+                return "Enter an Integer";
+            }else{
+                int num1 = Integer.parseInt(a);
+                int num2 = Integer.parseInt(b);
+                result = String.valueOf(num1 + num2);
+            }
+
+            }else {
+                result = "Letters cannot be entered";
+            }
+            return result;
         }
-        return result;
-    }
 
 
 
@@ -61,3 +64,4 @@ public class Math {
         return pattern.matcher(strNum).matches();
     }
 }
+
