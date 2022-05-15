@@ -18,7 +18,7 @@ public class MathTest {
     }
     @Test
     public void doubleAdd(){
-        assertEquals("Enter an Integer",math.add("2","2.0"));
+        assertEquals("Enter an Integer",math.divide("2","2.0"));
     }
 
     @Test

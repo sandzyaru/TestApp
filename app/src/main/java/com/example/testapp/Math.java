@@ -33,24 +33,30 @@ public class Math {
             return "Empty";
         }
         if (isNumeric(a) || isNumeric(b)) {
-            int num1 = Integer.parseInt(a);
-            int num2 = Integer.parseInt(b);
+
             if (b.equals("0")) {
                 return "Can't divide by zero";
             }
-            if( Integer.parseInt(b)>Integer.parseInt(a)){
-                if(Integer.parseInt(b) % 2 == 0 || Integer.parseInt(a) % 2 == 1 ){
-                    return "Comes out a non-integer";
+            if (a.contains(".") || b.contains(".")) {
+
+                return "Enter an Integer";
+            }else{
+                if( Integer.parseInt(b)>Integer.parseInt(a)){
+                    if(Integer.parseInt(b) % 2 == 0 || Integer.parseInt(a) % 2 == 1 ) {
+                        return "Comes out a non-integer";
+                    }
                 }
-                 return "Comes out a non-integer";
+                else if(Integer.parseInt(a)>Integer.parseInt(b) && Integer.parseInt(a) % 2 == 1 && Integer.parseInt(b) % 2 == 0 ){
+                    return "Comes out a non-integer";
+                }else {
+                    result = "Letters and spaces cannot be entered";
+                    System.out.println("Letters and spaces cannot be entered.");
+                }
+
             }
-            else if(Integer.parseInt(a)>Integer.parseInt(b) && Integer.parseInt(a) % 2 == 1 && Integer.parseInt(b) % 2 == 0 ){
-                return "Comes out a non-integer";
-            }
+            int num1 = Integer.parseInt(a);
+            int num2 = Integer.parseInt(b);
             result = String.valueOf(num1 / num2);
-        } else {
-            result = "Letters and spaces cannot be entered";
-            System.out.println("Letters and spaces cannot be entered.");
         }
         return result;
     }
